@@ -6,6 +6,16 @@ function M.yank_to_note()
 	local file = require("mocknotes.file")
 
 	local lines = selection.get_selection()
+	local filename = vim.fn.expand("%")
+	local extension = vim.fn.fnamemodify(filename, ":e")
+
+	vim.notify("extension:", extension)
+
+	if lines then
+		table.insert(lines, 1, "```" .. extension)
+		table.insert(lines, "```")
+	end
+
 	local filename = os.date("%Y-%m-%d_%H-%M-%S") .. ".md"
 	local filepath = mocknotes.config.directory .. "/quick/" .. filename
 
