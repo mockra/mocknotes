@@ -6,8 +6,8 @@ function M.yank_to_note()
 	local file = require("mocknotes.file")
 
 	local lines = selection.get_selection()
-	local filename = vim.fn.expand("%")
-	local extension = vim.fn.fnamemodify(filename, ":e")
+	local source_filename = vim.fn.expand("%")
+	local extension = vim.fn.fnamemodify(source_filename, ":e")
 
 	vim.notify("extension:", extension)
 
