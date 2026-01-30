@@ -4,7 +4,7 @@ function M.create_file(opts)
 	opts = opts or {}
 
 	local filepath = opts.filepath
-	local content = opts.content
+	local content = opts.content or {}
 
 	local window = require("mocknotes.window")
 
