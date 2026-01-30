@@ -13,6 +13,7 @@ function M.create_file(opts)
 
 	vim.api.nvim_buf_set_name(buf, filepath)
 	vim.bo[buf].modified = true
+	vim.api.nvim_buf_set_option(buf, "filetype", "markdown")
 
 	window.create_float({
 		buf = buf,
