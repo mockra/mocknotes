@@ -6,7 +6,7 @@ function M.get_selection()
 	local lines = vim.fn.getline(start_pos[2], end_pos[2])
 
 	if type(lines) ~= "table" or #lines == 0 then
-		return nil
+		return {}
 	end
 
 	if #lines == 1 then
