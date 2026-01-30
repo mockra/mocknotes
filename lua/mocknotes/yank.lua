@@ -9,8 +9,6 @@ function M.yank_to_note()
 	local source_filename = vim.fn.expand("%")
 	local extension = vim.fn.fnamemodify(source_filename, ":e")
 
-	vim.notify("extension:", extension)
-
 	if lines then
 		table.insert(lines, 1, "```" .. extension)
 		table.insert(lines, "```")
