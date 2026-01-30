@@ -51,6 +51,12 @@ require('mocknotes').setup({
 EOF
 ```
 
+## Usage
+
+### Commands
+
+- `:MockNotesYank` - Create a new note from visual selection in a floating window
+
 ## License
 
 MIT
