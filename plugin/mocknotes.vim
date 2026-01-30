@@ -8,3 +8,4 @@ endif
 let g:loaded_mocknotes = 1
 
 command! -range MockNotesYank lua require('mocknotes.yank').yank_to_note()
+command! MockNotesSave lua require('mocknotes.save').save_all()
