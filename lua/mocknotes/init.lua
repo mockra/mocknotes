@@ -1,7 +1,6 @@
 local M = {}
 
--- Store notes for the current session
-M.notes = {}
+M.config = {}
 
 -- Initialize plugin
 function M.setup(opts)
@@ -30,6 +29,11 @@ function M.setup(opts)
 
 		vim.notify("Repository cloned successfully", vim.log.levels.INFO)
 	end
+
+	M.config = {
+		directory = noteDirectory,
+		git_repo = gitRepo,
+	}
 end
 
 return M
