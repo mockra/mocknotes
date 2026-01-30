@@ -12,7 +12,7 @@ function M.create_file(opts)
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, content)
 
 	vim.api.nvim_buf_set_name(buf, filepath)
-	vim.api.nvim_buf_set_option(buf, "modified", true)
+	vim.bo[buf].modified = true
 
 	window.create_float({
 		buf = buf,
