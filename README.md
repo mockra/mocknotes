@@ -56,6 +56,7 @@ EOF
 ### Commands
 
 - `:MockNotesYank` - Create a new note from visual selection in a floating window
+- `:MockNotesSave` - Save all notes
 
 ## License
 
