@@ -6,3 +6,5 @@ if exists('g:loaded_mocknotes')
   finish
 endif
 let g:loaded_mocknotes = 1
+
+command! -range MockNotesYank lua require('mocknotes.yank').yank_to_note()
