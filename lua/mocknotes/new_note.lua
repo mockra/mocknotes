@@ -29,7 +29,7 @@ function M.new_note()
 		})
 	end, { buffer = buf, silent = true })
 
-	vim.keymap.set("i", "<Esc>", function()
+	vim.keymap.set({ "i", "n" }, "<Esc>", function()
 		vim.api.nvim_win_close(win, true)
 	end, { buffer = buf, silent = true })
 end
