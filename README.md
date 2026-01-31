@@ -4,7 +4,7 @@ A simple Neovim plugin for quick note-taking during your editing sessions.
 
 ## Requirements
 
-- Neovim 0.5+
+- Neovim 0.10+
 
 ## Installation
 
