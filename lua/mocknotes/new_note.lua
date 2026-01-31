@@ -17,6 +17,10 @@ function M.new_note()
 
 		vim.api.nvim_win_close(win, true)
 
+		if filename == nil or filename == "" then
+			return
+		end
+
 		local extension = vim.fn.fnamemodify(filename, ":e")
 		if extension == "" then
 			filename = filename .. ".md"
