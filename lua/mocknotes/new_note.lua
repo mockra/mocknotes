@@ -17,6 +17,11 @@ function M.new_note()
 
 		vim.api.nvim_win_close(win, true)
 
+		local extension = vim.fn.fnamemodify(filename, ":e")
+		if extension == "" then
+			filename = filename .. ".md"
+		end
+
 		local filepath = mocknotes.config.directory .. "/" .. filename
 
 		file.create_file({
