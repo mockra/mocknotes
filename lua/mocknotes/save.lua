@@ -9,11 +9,14 @@ function M.save_all()
 		vim.fn.shellescape(mocknotes.config.directory),
 		vim.fn.shellescape(save_message)
 	)
-	local result = vim.fn.system(cmd)
 
-	if vim.v.shell_error ~= 0 then
-		vim.notify("MockNotes: Failed to auto save notes:\n" .. result, vim.log.levels.ERROR)
-	end
+	vim.system({ "sh", "-c", cmd }, {}, function(obj)
+		vim.schedule(function()
+			if not obj.code == 0 then
+				vim.notify("MockNotes: Failed to save notes:\n" .. obj.stderr, vim.log.levels.ERROR)
+			end
+		end)
+	end)
 end
 
 return M
